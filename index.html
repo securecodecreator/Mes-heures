@@ -75,7 +75,6 @@
     <h1>Suivi des Heures de Travail</h1>
 
     <select id="monthSelect" onchange="loadMonth()">
-        <!-- Options pour chaque mois -->
         <option value="0">Janvier</option>
         <option value="1">Février</option>
         <option value="2">Mars</option>
@@ -133,7 +132,7 @@
             }
 
             loadSession(selectedMonth, year);
-            calculateTotal(); // Recalculate total when month is loaded
+            calculateTotal(); 
         }
 
         function calculateTotal() {
@@ -147,7 +146,7 @@
         document.getElementById('totalHours').textContent = totalHours.toFixed(2);
 
         const hourlyRate = parseFloat(document.getElementById('hourlyRate').value);
-        const quarterHours = totalHours / 0.25; // Nombre de quarts d'heure
+        const quarterHours = totalHours / 0.25; 
         const grossPay = (quarterHours * (hourlyRate / 4)).toFixed(2);
         document.getElementById('grossPay').textContent = grossPay;
     }
@@ -211,13 +210,12 @@
                             document.getElementById(key).value = sessionData[key];
                         }
                     }
-                    calculateTotal(); // Recalculate total after importing data
+                    calculateTotal(); 
                 };
                 reader.readAsText(file);
             }
         }
 
-        // Initial load
         loadMonth();
     </script>
 
